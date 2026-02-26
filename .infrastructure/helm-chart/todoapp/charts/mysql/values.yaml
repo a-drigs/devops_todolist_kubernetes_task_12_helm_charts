@@ -40,3 +40,6 @@ mysql:
     requests:
       cpu: 500m
       memory: 1Gi
+    limits:
+      cpu: 900m
+      memory: 2Gi

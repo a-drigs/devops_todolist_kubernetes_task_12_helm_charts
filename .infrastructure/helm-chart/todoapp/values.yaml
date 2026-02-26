@@ -29,6 +29,7 @@ todoapp:
   affinity:
     matchExpressions:
       key: app
+      operator: In
       values: todoapp
 
   rbac:
@@ -45,4 +46,12 @@ todoapp:
 
 # PVC
   pvc:
+    accessModes: ReadWriteMany
     storage: 1Gi
+
+# PV
+  pv:
+    storage: 1Gi
+    storageClassName: standard
+    persistentVolumeReclaimPolicy: Delete
+    accessModes: ReadWriteMany
